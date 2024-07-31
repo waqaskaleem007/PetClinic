@@ -25,5 +25,8 @@ jobs:
           java-version: ${{matrix.java}}
           distribution: 'adopt'
           cache: maven
+      - name: Set execute permission for mvnw
+        run: chmod +x ./mvnw
+      
       - name: Build with Maven Wrapper
         run: ./mvnw -B package
